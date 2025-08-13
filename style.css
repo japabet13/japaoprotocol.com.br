@@ -1,0 +1,119 @@
+/* Customizações e Media Queries */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    overflow-x: hidden; /* Prevenir scroll horizontal */
+}
+
+/* --- Otimizações para Mobile e PC --- */
+
+/* 1. Hero Section - Imagem de Fundo */
+.hero-section {
+    background-image: linear-gradient(rgba(18, 18, 18, 0.13), rgba(18, 18, 18, 0.13)), url('https://res.cloudinary.com/dfbctareb/image/upload/q_auto/f_webp/1_w3crlj');
+    background-size: cover;
+    background-position: center center;
+    min-height: calc(100vh - 48px); /* Altura do header: 48px */
+}
+@media (max-width: 767px) {
+    .hero-section {
+        background-image: url('https://res.cloudinary.com/dfbctareb/image/upload/q_auto/f_webp/hero-bg-mobile_ldnvri');
+        background-position: top center; /* Centraliza a imagem no topo */
+        background-size: contain; /* Faz a imagem caber inteira */
+        background-repeat: no-repeat; /* Evita repetição da imagem */
+        min-height: auto; /* Remove a altura mínima no mobile */
+        padding-bottom: 4rem; /* Adiciona um padding inferior para dar espaço ao conteúdo */
+    }
+}
+
+/* 5. Operação Profissional - Imagem Reta no Mobile */
+.professional-op-image {
+    transform: perspective(1000px) rotateY(15deg);
+}
+@media (max-width: 1023px) { /* lg breakpoint */
+    .professional-op-image {
+        transform: none;
+    }
+}
+
+/* 8. Seção "Conheça por Dentro" - Fundo e Imagem */
+.conheca-section-bg {
+     background-image: linear-gradient(rgba(18, 18, 18, 0.13), rgba(18, 18, 18, 0.13)), url('https://res.cloudinary.com/dfbctareb/image/upload/q_auto/f_webp/mockup_fk2v2k');
+}
+@media (max-width: 1023px) { /* lg breakpoint */
+    .conheca-section-bg {
+        background-image: none;
+        background-color: #000;
+    }
+}
+
+/* 13. Seção Mentor - Imagem de Fundo */
+.mentor-section {
+    background-image: linear-gradient(rgba(18, 18, 18, 0.13), rgba(18, 18, 18, 0.13)), url('https://res.cloudinary.com/dfbctareb/image/upload/q_auto/f_webp/mentor_h8jx9t');
+    background-size: contain; /* Ajusta a imagem para ser totalmente visível no PC */
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+@media (max-width: 1023px) { /* lg breakpoint */
+    .mentor-section {
+         background-image: url('https://res.cloudinary.com/dfbctareb/image/upload/q_auto/f_webp/mentor-bg-mobile_s2okhr');
+         background-size: cover; 
+         background-position: center center;
+    }
+}
+
+
+/* --- Estilos Gerais --- */
+.text-gradient {
+    background: linear-gradient(180deg, #fde047 0%, #eab308 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #f4a635;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 18px;
+    font-weight: bold;
+}
+.swiper-pagination-bullet-active {
+    background: #f4a635;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+.btn-pulse {
+    animation: pulse 2s infinite;
+}
+
+.btn-text-shadow {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.swiper-modules .swiper-slide {
+    width: 60%;
+    max-width: 280px;
+}
+@media (min-width: 768px) {
+     .swiper-modules .swiper-slide {
+        width: 40%;
+     }
+}
